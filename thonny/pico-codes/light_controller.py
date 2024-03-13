@@ -34,24 +34,24 @@ class LightController:
     def off(self):
         self.led.off()
         if self.button.pressed():
-            print(OFF to ONW)
+            print("OFF to ONW")
             self.state = self.onw
         
     def onw(self):
         self.led.on()
         if not self.button.pressed():
-            print(ONW to ON)
+            print("ONW to ON")
             self.state = self.on
     
     def on(self):
         if self.button.pressed():
-            print(ON to OFFW)
+            print("ON to OFFW")
             self.led.off()
             self.state = self.offw
     
     def offw(self):
         if not self.button.pressed():
-            print(OFFW to OFF)
+            print("OFFW to OFF")
             self.state = self.off
     
 
